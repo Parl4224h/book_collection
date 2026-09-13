@@ -45,6 +45,7 @@ body {
 .home-link { text-decoration: underline; }
 
 .flash-notice { background: #dcfce7; border-radius: .375rem; color: #166534; padding: .75rem 1rem; }
+.flash-alert { background: #fee2e2; border-radius: .375rem; color: #991b1b; padding: .75rem 1rem; }
 .eyebrow, .muted { color: #64748b; }
 .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 
