@@ -15,6 +15,11 @@ class BooksTest < ApplicationSystemTestCase
     click_on "Add a Book"
 
     fill_in "Title", with: @book.title
+    fill_in "Author", with: @book.author
+    fill_in "Price", with: @book.price
+    select @book.published_date.year.to_s, from: "book_published_date_1i"
+    select @book.published_date.strftime("%B"), from: "book_published_date_2i"
+    select @book.published_date.day.to_s, from: "book_published_date_3i"
     click_on "Create Book"
 
     assert_text "Book was successfully added"
