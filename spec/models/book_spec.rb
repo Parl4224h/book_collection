@@ -20,15 +20,23 @@ RSpec.describe Book, type: :model do
   end
 
   it "stores an author" do
-    expect(book.author).to eq("Octavia E. Butler")
+    book.author = nil
+
+    expect(book).not_to be_valid
+    expect(book.errors[:author]).to include("can't be blank")
   end
 
   it "stores a non-negative numeric price" do
-    expect(book).to be_valid
-    expect(book.price).to eq(14.99)
+    book.price = nil
+
+    expect(book).not_to be_valid
+    expect(book.errors[:price]).to include("is not a number")
   end
 
   it "stores a published date" do
-    expect(book.published_date).to eq(Date.new(1979, 6, 1))
+    book.published_date = nil
+
+    expect(book).not_to be_valid
+    expect(book.errors[:published_date]).to include("can't be blank")
   end
 end
