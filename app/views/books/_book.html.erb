@@ -1,3 +1,6 @@
 <article id="<%= dom_id book %>" class="book-card">
   <h2><%= book.title %></h2>
+  <p><strong>Author:</strong> <%= book.author %></p>
+  <p><strong>Price:</strong> <%= number_to_currency(book.price) %></p>
+  <p><strong>Published:</strong> <%= book.published_date %></p>
 </article>

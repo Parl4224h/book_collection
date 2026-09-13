@@ -2,6 +2,12 @@
 
 one:
   title: MyString
+  author: Ada Lovelace
+  price: 12.50
+  published_date: 2020-01-01
 
 two:
   title: MyString
+  author: Grace Hopper
+  price: 20.00
+  published_date: 2021-02-02

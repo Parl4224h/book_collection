@@ -16,6 +16,21 @@
     <%= form.text_field :title, autofocus: true %>
   </div>
 
+  <div class="form-field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :price %>
+    <%= form.number_field :price, min: 0, step: 0.01 %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :published_date %>
+    <%= form.date_select :published_date, start_year: 1800, end_year: Date.current.year %>
+  </div>
+
   <div class="form-actions">
     <%= form.submit class: "button button-primary" %>
     <%= link_to "Back to Home", root_path, class: "button button-secondary" %>
