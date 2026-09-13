@@ -1,0 +1,29 @@
+<% content_for :title, "Users | Book Collection" %>
+
+<div class="page-heading">
+  <div>
+    <p class="eyebrow">Readers</p>
+    <h1>Users</h1>
+  </div>
+  <%= link_to "Add a User", new_user_path, class: "button button-primary" %>
+</div>
+
+<div class="form-actions">
+  <%= link_to "Books", books_path, class: "button button-secondary" %>
+  <%= link_to "User Books", user_books_path, class: "button button-secondary" %>
+</div>
+
+<% @users.each do |user| %>
+  <section class="book-row">
+    <p><strong>Username:</strong> <%= user.username %></p>
+    <div class="book-actions">
+      <%= link_to "Show", user, class: "button button-secondary" %>
+      <%= link_to "Update", edit_user_path(user), class: "button button-secondary" %>
+      <%= button_to "Delete", user, method: :delete, class: "button button-danger" %>
+    </div>
+  </section>
+<% end %>
+
+<% if @users.empty? %>
+  <p class="empty-state">No users yet. Add a reader to begin assigning books.</p>
+<% end %>
