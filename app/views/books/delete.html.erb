@@ -1,0 +1,13 @@
+<% content_for :title, "Delete a Book | Book Collection" %>
+
+<h1>Delete a Book</h1>
+
+<section class="confirmation-card">
+  <p>Are you sure you want to delete <strong><%= @book.title %></strong>?</p>
+  <p class="muted">This action cannot be undone.</p>
+
+  <div class="form-actions">
+    <%= button_to "Yes, delete this book", book_path(@book), method: :delete, class: "button button-danger" %>
+    <%= link_to "No, go back to Home", root_path, class: "button button-secondary" %>
+  </div>
+</section>
