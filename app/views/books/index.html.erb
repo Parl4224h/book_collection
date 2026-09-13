@@ -8,6 +8,11 @@
   <%= link_to "Add a Book", new_book_path, class: "button button-primary" %>
 </div>
 
+<div class="form-actions">
+  <%= link_to "Users", users_path, class: "button button-secondary" %>
+  <%= link_to "User Books", user_books_path, class: "button button-secondary" %>
+</div>
+
 <div id="books">
   <% @books.each do |book| %>
     <section class="book-row">
