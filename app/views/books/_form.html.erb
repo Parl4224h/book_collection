@@ -11,12 +11,13 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="form-field">
+    <%= form.label :title %>
+    <%= form.text_field :title, autofocus: true %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= form.submit class: "button button-primary" %>
+    <%= link_to "Back to Home", root_path, class: "button button-secondary" %>
   </div>
 <% end %>

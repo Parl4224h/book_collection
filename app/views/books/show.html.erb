@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "Book Details | Book Collection" %>
+
+<h1>Book Details</h1>
 
 <%= render @book %>
 
-<div>
-  <%= link_to "Edit this book", edit_book_path(@book) %> |
-  <%= link_to "Back to books", books_path %>
-
-  <%= button_to "Destroy this book", @book, method: :delete %>
+<div class="form-actions">
+  <%= link_to "Update this book", edit_book_path(@book), class: "button button-primary" %>
+  <%= link_to "Delete this book", delete_book_path(@book), class: "button button-danger" %>
+  <%= link_to "Back to Home", root_path, class: "button button-secondary" %>
 </div>
