@@ -1,16 +1,26 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "Home | Book Collection" %>
 
-<% content_for :title, "Books" %>
-
-<h1>Books</h1>
+<div class="page-heading">
+  <div>
+    <p class="eyebrow">Your library</p>
+    <h1>Book Collection</h1>
+  </div>
+  <%= link_to "Add a Book", new_book_path, class: "button button-primary" %>
+</div>
 
 <div id="books">
   <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
+    <section class="book-row">
+      <%= render book %>
+      <div class="book-actions">
+        <%= link_to "Show", book_path(book), class: "button button-secondary" %>
+        <%= link_to "Update", edit_book_path(book), class: "button button-secondary" %>
+        <%= link_to "Delete", delete_book_path(book), class: "button button-danger" %>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @books.empty? %>
+    <p class="empty-state">No books yet. Add your first book to start your collection.</p>
   <% end %>
 </div>
-
-<%= link_to "New book", new_book_path %>

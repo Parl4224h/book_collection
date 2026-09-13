@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Test App" %></title>
+    <title><%= content_for(:title) || "Book Collection" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -23,6 +23,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="site-header">
+      <div class="page-shell header-content">
+        <%= link_to "Book Collection", root_path, class: "brand" %>
+        <%= link_to "Home", root_path, class: "home-link" %>
+      </div>
+    </header>
+    <main class="page-shell">
+      <% if notice.present? %>
+        <p class="flash-notice" role="status"><%= notice %></p>
+      <% end %>
+      <%= yield %>
+    </main>
   </body>
 </html>

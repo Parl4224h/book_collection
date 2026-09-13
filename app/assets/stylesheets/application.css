@@ -8,3 +8,61 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8fafc;
+  color: #172033;
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
+
+.site-header {
+  background: #172554;
+  padding: 1rem 0;
+}
+
+.page-shell {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 1.5rem;
+}
+
+.header-content, .page-heading, .book-row, .book-actions, .form-actions {
+  align-items: center;
+  display: flex;
+  gap: .75rem;
+}
+
+.header-content, .page-heading, .book-row {
+  justify-content: space-between;
+}
+
+.brand, .home-link { color: #fff; text-decoration: none; }
+.brand { font-size: 1.25rem; font-weight: 700; }
+.home-link { text-decoration: underline; }
+
+.flash-notice { background: #dcfce7; border-radius: .375rem; color: #166534; padding: .75rem 1rem; }
+.eyebrow, .muted { color: #64748b; }
+.eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+.book-row, .confirmation-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: .5rem;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.book-card h2 { font-size: 1.1rem; margin: 0; }
+.form-field { margin: 1rem 0; }
+.form-field label, .form-field input { display: block; }
+.form-field input { font: inherit; margin-top: .35rem; padding: .5rem; width: min(100%, 30rem); }
+
+.button { border: 0; border-radius: .375rem; cursor: pointer; display: inline-block; font: inherit; padding: .55rem .8rem; text-decoration: none; }
+.button-primary { background: #1d4ed8; color: #fff; }
+.button-secondary { background: #e2e8f0; color: #172033; }
+.button-danger { background: #b91c1c; color: #fff; }
+.empty-state { color: #64748b; }
